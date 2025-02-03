@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prjBrouwerij.DA;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace prjBrouwerij
         public frmBrouwerij()
         {
             InitializeComponent();
+            VulLijstBrouwerijen();
+        }
+
+        public void VulLijstBrouwerijen()
+        {
+            //voor ieder tekstitem in de list voegen we toe aan de txt
+            foreach(string s in BierDA.BrouwerijenOphalen())
+            {
+                lsbBrouwerijen.Items.Add(s);
+            }
+        }
+
+        private void lsbBrouwerijen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtBrouwerij.Text = lsbBrouwerijen.SelectedItem.ToString();
         }
     }
 }

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="mysql.data">
+      <HintPath>Y:\6BI\0-opdrachten\Sofo\mysql.data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,12 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DA\BierDA.cs" />
     <Compile Include="frmBrouwerij.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBrouwerij.Designer.cs">
       <DependentUpon>frmBrouwerij.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Database.cs" />
+    <Compile Include="Model\Bier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBrouwerij.resx">
@@ -79,5 +85,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
