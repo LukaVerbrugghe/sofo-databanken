@@ -28,13 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lsbBrouwerijen = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
+            // 
+            // lsbBrouwerijen
+            // 
+            this.lsbBrouwerijen.FormattingEnabled = true;
+            this.lsbBrouwerijen.Location = new System.Drawing.Point(451, 26);
+            this.lsbBrouwerijen.Name = "lsbBrouwerijen";
+            this.lsbBrouwerijen.Size = new System.Drawing.Size(196, 381);
+            this.lsbBrouwerijen.TabIndex = 0;
+            // 
+            // frmBrouwerij
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.lsbBrouwerijen);
+            this.Name = "frmBrouwerij";
+            this.Text = "Brouwerij";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox lsbBrouwerijen;
     }
 }
 
