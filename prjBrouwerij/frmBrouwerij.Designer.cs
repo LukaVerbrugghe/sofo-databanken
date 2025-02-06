@@ -155,6 +155,7 @@
             this.btnBierToevoegen.TabIndex = 8;
             this.btnBierToevoegen.Text = "Toevoegen";
             this.btnBierToevoegen.UseVisualStyleBackColor = true;
+            this.btnBierToevoegen.Click += new System.EventHandler(this.btnBierToevoegen_Click);
             // 
             // btnBierAanpassen
             // 
@@ -164,6 +165,7 @@
             this.btnBierAanpassen.TabIndex = 8;
             this.btnBierAanpassen.Text = "Aanpassen";
             this.btnBierAanpassen.UseVisualStyleBackColor = true;
+            this.btnBierAanpassen.Click += new System.EventHandler(this.btnBierAanpassen_Click);
             // 
             // btnVerwijderen
             // 

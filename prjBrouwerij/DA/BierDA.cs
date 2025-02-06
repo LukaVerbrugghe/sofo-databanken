@@ -103,5 +103,22 @@ namespace prjBrouwerij.DA
 
             Database.CloseConnection(conn);
         }
+
+        public static void Toevoegen(Bier bier)
+        {
+            MySqlConnection conn = Database.MaakVerbinding();
+            string sql = "INSERT INTO bier (biernaam, brouwerij, kleur, alcohol) VALUES (@biernaam, @brouwerij, @kleur, @alcohol)";
+            MySqlCommand cmd = new MySqlCommand( sql, conn);
+            cmd.CommandType=System.Data.CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@biernaam", bier.Biernaam.ToString());
+            cmd.Parameters.AddWithValue("@brouwerij", bier.Brouwerij.ToString());
+            cmd.Parameters.AddWithValue("@kleur", bier.Kleur.ToString());
+            cmd.Parameters.AddWithValue("@alcohol", bier.Alcohol.ToString());
+
+            cmd.ExecuteNonQuery();
+
+            Database.CloseConnection(conn);
+        }
     }
 }

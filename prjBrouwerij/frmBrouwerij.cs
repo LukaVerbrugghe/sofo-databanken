@@ -80,5 +80,33 @@ namespace prjBrouwerij
             txtKleur.Clear();
             txtAlcohol.Clear();
         }
+
+        private void btnBierAanpassen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBierToevoegen_Click(object sender, EventArgs e)
+        {
+            Bier nieuweBier = new Bier();
+
+            nieuweBier.Biernaam = txtBiernaam.Text;
+            nieuweBier.Alcohol = Convert.ToDecimal(txtAlcohol.Text);
+            nieuweBier.Kleur = txtKleur.Text;
+            nieuweBier.Brouwerij = txtBrouwerij.Text;
+
+            BierDA.Toevoegen(nieuweBier);
+
+            lsbBrouwerijen.Items.Clear();
+            VulLijstBrouwerijen();
+
+            lsvBier.Items.Clear();
+
+            txtAlcohol.Clear();
+            txtKleur.Clear();
+            txtAlcohol.Clear();
+            txtBrouwerij.Clear();
+            txtBiernaam.Clear();
+        }
     }
 }
