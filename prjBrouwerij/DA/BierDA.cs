@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,48 @@ namespace prjBrouwerij.DA
             Database.CloseConnection(conn);
 
             return brouwerijen;
+        }
+
+        public static List<Bier> OphalenBieren(string Brouwerij)
+        {
+            //je geeft een parameter mee om de bieren van die geselecteerde brouwerij op te vragen
+            List<Bier> Bieren = new List<Bier>();
+
+            //sql statement
+            string sql = "SELECT * FROM bier WHERE brouwerij=@brouwerij";
+
+            //verbinding maken met de database
+            MySqlConnection conn = Database.MaakVerbinding();
+            MySqlCommand cmd = new MySqlCommand( sql, conn);
+            cmd.CommandType = System.Data.CommandType.Text;
+
+            //parameter niet vergeten (!!!)
+            cmd.Parameters.AddWithValue("@brouwerij", Brouwerij);
+            
+            //reader nodig om de gegevens op te halen, want er zijn meerdere gegevens die we willen ophalen uit de database
+            MySqlDataReader r = cmd.ExecuteReader();
+
+            //reader in onze list steken met ieder item als een object (!!!)
+            //IDatarecord nodig
+            while(r.Read())
+            {
+                Bieren.Add(Create(r));
+            }
+            r.Close();
+            Database.CloseConnection(conn);
+            return Bieren;
+        }
+
+        //deze methode wordt gebruikt door ophalenbieren
+        public static Bier Create(IDataRecord record)
+        {
+            return new Bier()
+            {
+                Biernaam = record["biernaam"].ToString(),
+                Brouwerij = record["brouwerij"].ToString(),
+                Alcohol = Convert.ToDecimal(record["alcohol"].ToString()),
+                Kleur = record["kleur"].ToString()
+            };
         }
     }
 }
