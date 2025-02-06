@@ -83,5 +83,25 @@ namespace prjBrouwerij.DA
                 Kleur = record["kleur"].ToString()
             };
         }
+
+        //zorgen dat je een vier kan verwijderen
+        public static void Verwijder(Bier bier)
+        {
+            //verbinding maken met de databank
+            MySqlConnection conn = Database.MaakVerbinding();
+
+            //sql statement
+            string sql = "DELETE FROM bier WHERE biernaam = @biernaam";
+
+            //cmd
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.Parameters.AddWithValue("@biernaam", bier.Biernaam);
+
+            //commando uitvoeren
+            cmd.ExecuteNonQuery();
+
+            Database.CloseConnection(conn);
+        }
     }
 }

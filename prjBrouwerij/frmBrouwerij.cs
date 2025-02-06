@@ -60,5 +60,25 @@ namespace prjBrouwerij
             txtAlcohol.Text = BO.Alcohol.ToString();
             txtKleur.Text = BO.Kleur.ToString();
         }
+
+        private void btnVerwijderen_Click(object sender, EventArgs e)
+        {
+            Bier bier = new Bier();
+
+            bier.Biernaam = txtBiernaam.Text; //of hetgene dat in de listview geselecteerd is
+
+            BierDA.Verwijder(bier);
+
+            //listbox vernieuwen (omdat het er anders nog in staat)
+            //brouwerijen zonder items komen niet in de lijst met brouwerijen (want dat zou niet zo handig zijn)
+            lsbBrouwerijen.Items.Clear();
+            VulLijstBrouwerijen();
+
+            lsvBier.Items.Clear();
+
+            txtAlcohol.Clear();
+            txtKleur.Clear();
+            txtAlcohol.Clear();
+        }
     }
 }

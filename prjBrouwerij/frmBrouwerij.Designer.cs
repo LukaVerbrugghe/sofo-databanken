@@ -41,6 +41,9 @@
             this.txtAlcohol = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtKleur = new System.Windows.Forms.TextBox();
+            this.btnBierToevoegen = new System.Windows.Forms.Button();
+            this.btnBierAanpassen = new System.Windows.Forms.Button();
+            this.btnVerwijderen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lsbBrouwerijen
@@ -144,11 +147,42 @@
             this.txtKleur.Size = new System.Drawing.Size(347, 20);
             this.txtKleur.TabIndex = 4;
             // 
+            // btnBierToevoegen
+            // 
+            this.btnBierToevoegen.Location = new System.Drawing.Point(19, 187);
+            this.btnBierToevoegen.Name = "btnBierToevoegen";
+            this.btnBierToevoegen.Size = new System.Drawing.Size(92, 37);
+            this.btnBierToevoegen.TabIndex = 8;
+            this.btnBierToevoegen.Text = "Toevoegen";
+            this.btnBierToevoegen.UseVisualStyleBackColor = true;
+            // 
+            // btnBierAanpassen
+            // 
+            this.btnBierAanpassen.Location = new System.Drawing.Point(117, 187);
+            this.btnBierAanpassen.Name = "btnBierAanpassen";
+            this.btnBierAanpassen.Size = new System.Drawing.Size(92, 37);
+            this.btnBierAanpassen.TabIndex = 8;
+            this.btnBierAanpassen.Text = "Aanpassen";
+            this.btnBierAanpassen.UseVisualStyleBackColor = true;
+            // 
+            // btnVerwijderen
+            // 
+            this.btnVerwijderen.Location = new System.Drawing.Point(215, 187);
+            this.btnVerwijderen.Name = "btnVerwijderen";
+            this.btnVerwijderen.Size = new System.Drawing.Size(92, 37);
+            this.btnVerwijderen.TabIndex = 8;
+            this.btnVerwijderen.Text = "Verwijderen";
+            this.btnVerwijderen.UseVisualStyleBackColor = true;
+            this.btnVerwijderen.Click += new System.EventHandler(this.btnVerwijderen_Click);
+            // 
             // frmBrouwerij
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 450);
+            this.Controls.Add(this.btnVerwijderen);
+            this.Controls.Add(this.btnBierAanpassen);
+            this.Controls.Add(this.btnBierToevoegen);
             this.Controls.Add(this.txtKleur);
             this.Controls.Add(this.txtAlcohol);
             this.Controls.Add(this.txtBiernaam);
@@ -160,7 +194,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lsbBrouwerijen);
             this.Name = "frmBrouwerij";
-            this.Text = "Brouwerij";
+            this.Text = "Bier";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,6 +215,9 @@
         private System.Windows.Forms.TextBox txtAlcohol;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtKleur;
+        private System.Windows.Forms.Button btnBierToevoegen;
+        private System.Windows.Forms.Button btnBierAanpassen;
+        private System.Windows.Forms.Button btnVerwijderen;
     }
 }
 
