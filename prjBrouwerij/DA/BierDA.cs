@@ -120,5 +120,23 @@ namespace prjBrouwerij.DA
 
             Database.CloseConnection(conn);
         }
+
+        public static void Aanpassen(Bier bierNieuw, string naamVorigBier)
+        {
+            MySqlConnection conn = Database.MaakVerbinding();
+            string sql = "UPDATE bier SET biernaam=@biernaam, brouwerij=@brouwerij, kleur=@kleur, alcohol=@alcohol WHERE biernaam=@vorigbier";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandType = System.Data.CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@biernaam", bierNieuw.Biernaam);
+            cmd.Parameters.AddWithValue("@brouwerij", bierNieuw.Brouwerij);
+            cmd.Parameters.AddWithValue("@kleur", bierNieuw.Kleur);
+            cmd.Parameters.AddWithValue("@alcohol", Convert.ToString(bierNieuw.Alcohol));
+            cmd.Parameters.AddWithValue("@vorigbier", naamVorigBier);
+
+            cmd.ExecuteNonQuery();
+
+            Database.CloseConnection(conn);
+        }
     }
 }

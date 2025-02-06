@@ -71,19 +71,19 @@ namespace prjBrouwerij
 
             //listbox vernieuwen (omdat het er anders nog in staat)
             //brouwerijen zonder items komen niet in de lijst met brouwerijen (want dat zou niet zo handig zijn)
-            lsbBrouwerijen.Items.Clear();
-            VulLijstBrouwerijen();
-
-            lsvBier.Items.Clear();
-
-            txtAlcohol.Clear();
-            txtKleur.Clear();
-            txtAlcohol.Clear();
+            herlaad();
         }
 
         private void btnBierAanpassen_Click(object sender, EventArgs e)
         {
+            Bier nieuwBier = new Bier();
+            nieuwBier.Biernaam = txtBiernaam.Text;
+            nieuwBier.Brouwerij = txtBrouwerij.Text;
+            nieuwBier.Kleur = txtKleur.Text;
+            nieuwBier.Alcohol = Convert.ToDecimal(txtAlcohol.Text);
 
+            BierDA.Aanpassen(nieuwBier, lsvBier.SelectedItems[0].SubItems[0].Text);
+            herlaad();
         }
 
         private void btnBierToevoegen_Click(object sender, EventArgs e)
@@ -97,6 +97,10 @@ namespace prjBrouwerij
 
             BierDA.Toevoegen(nieuweBier);
 
+            herlaad();
+        }
+        private void herlaad()
+        {
             lsbBrouwerijen.Items.Clear();
             VulLijstBrouwerijen();
 
@@ -105,8 +109,6 @@ namespace prjBrouwerij
             txtAlcohol.Clear();
             txtKleur.Clear();
             txtAlcohol.Clear();
-            txtBrouwerij.Clear();
-            txtBiernaam.Clear();
         }
     }
 }
