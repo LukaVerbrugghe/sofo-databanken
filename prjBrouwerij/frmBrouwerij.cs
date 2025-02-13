@@ -109,6 +109,8 @@ namespace prjBrouwerij
             txtAlcohol.Clear();
             txtKleur.Clear();
             txtAlcohol.Clear();
+            txtBiernaam.Clear();
+            txtBrouwerij.Clear();
         }
     }
 }
