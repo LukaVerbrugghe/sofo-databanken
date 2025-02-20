@@ -36,5 +36,11 @@ namespace prjApollo
             }
 
         }
+
+        private void lsvLeveranciers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //de gegevens van de geselecteerde leverancier in de daarvoor voorziene txt steken
+            Leveranciers geselecteerdeLeverancier = new Leveranciers();
+        }
     }
 }
