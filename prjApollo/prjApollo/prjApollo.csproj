@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DA\LeveranciersDA.cs" />
     <Compile Include="frmApollo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +57,7 @@
       <DependentUpon>frmApollo.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\Database.cs" />
+    <Compile Include="Model\Leveranciers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmApollo.resx">
@@ -83,9 +85,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DA\" />
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

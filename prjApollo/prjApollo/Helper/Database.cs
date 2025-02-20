@@ -28,15 +28,5 @@ namespace prjApollo.Helper
 
             return conn;
         }
-
-        //dit is niet per se nodig
-        public static void CloseConnection(MySqlConnection conn)
-        {
-            if (conn != null)
-            {
-                conn.Close();
-                conn = null;
-            }
-        }
     }
 }

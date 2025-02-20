@@ -83,6 +83,7 @@
             this.Adres,
             this.Postnr,
             this.Gemeente});
+            this.lsvLeveranciers.FullRowSelect = true;
             this.lsvLeveranciers.HideSelection = false;
             this.lsvLeveranciers.Location = new System.Drawing.Point(12, 12);
             this.lsvLeveranciers.Name = "lsvLeveranciers";
