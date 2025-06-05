@@ -57,6 +57,7 @@
             this.Naam,
             this.Emailadres,
             this.Website});
+            this.lsvBrouwerijen.FullRowSelect = true;
             this.lsvBrouwerijen.HideSelection = false;
             this.lsvBrouwerijen.Location = new System.Drawing.Point(13, 63);
             this.lsvBrouwerijen.Name = "lsvBrouwerijen";

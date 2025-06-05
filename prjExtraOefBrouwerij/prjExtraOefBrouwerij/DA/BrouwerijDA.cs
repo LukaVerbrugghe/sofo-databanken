@@ -4,6 +4,7 @@ using prjExtraOefBrouwerij.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -47,6 +48,18 @@ namespace prjExtraOefBrouwerij.DA
                 Description_nl = record["Description_nl"].ToString(),
                 Description_en = record["Description_en"].ToString()
             };
+        }
+
+        public static Color pickRowColor(string imgurl)
+        {
+            if(imgurl == string.Empty)
+            {
+                return Color.Red;
+            }
+            else
+            {
+                return Color.Green;
+            }
         }
     }
 }

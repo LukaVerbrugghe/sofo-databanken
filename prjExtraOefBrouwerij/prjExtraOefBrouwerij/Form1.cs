@@ -26,6 +26,7 @@ namespace prjExtraOefBrouwerij
             {
                 ListViewItem item = new ListViewItem(new string[] {b.id.ToString(), b.Name, b.Email, b.Website });
                 item.Tag = b;
+                item.BackColor = BrouwerijDA.pickRowColor(b.ImagesURL);
                 lsvBrouwerijen.Items.Add(item);
             }
         }
