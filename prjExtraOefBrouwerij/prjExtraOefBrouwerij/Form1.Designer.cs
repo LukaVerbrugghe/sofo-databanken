@@ -113,6 +113,7 @@
             this.btnEditDescription.TabIndex = 3;
             this.btnEditDescription.Text = "Pas beschrijving aan";
             this.btnEditDescription.UseVisualStyleBackColor = true;
+            this.btnEditDescription.Click += new System.EventHandler(this.btnEditDescription_Click);
             // 
             // btnDelete
             // 

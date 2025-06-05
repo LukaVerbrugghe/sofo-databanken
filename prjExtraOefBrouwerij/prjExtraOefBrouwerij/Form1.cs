@@ -45,7 +45,15 @@ namespace prjExtraOefBrouwerij
             //BO.Email = item.SubItems[2].Text;
             //BO.Website = item.SubItems[3].Text;
             rtxtBeschrijvingNL.Text = BrouwerijDA.returnDescriptionNL(BO.id);
-            rtxtBeschrijvingEN.Text = BrouwerijDA.returnDescriptionEN(BO.id);
+            //rtxtBeschrijvingEN.Text = BrouwerijDA.returnDescriptionEN(BO.id);
+        }
+
+        private void btnEditDescription_Click(object sender, EventArgs e)
+        {
+            string descrNL = rtxtBeschrijvingNL.Text;
+            string descrEN = rtxtBeschrijvingEN.Text;
+
+            BrouwerijDA.UpdateDescriptions(descrNL, descrEN);
         }
     }
 }

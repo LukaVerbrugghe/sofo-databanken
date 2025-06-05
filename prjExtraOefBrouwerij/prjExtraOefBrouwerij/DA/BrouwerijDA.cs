@@ -92,5 +92,19 @@ namespace prjExtraOefBrouwerij.DA
             conn.Close();
             return result;
         }
+
+        public static void UpdateDescriptions(string descrNL, string descrEN)
+        {
+            MySqlConnection conn = Database.MaakVerbinding();
+            string sql = "UPDATE brouwerij SET Description_en=@en, Description_nl=@nl";
+            MySqlCommand cmd = new MySqlCommand( sql, conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@en",descrEN);
+            cmd.Parameters.AddWithValue("@nl", descrNL);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
