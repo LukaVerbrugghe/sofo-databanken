@@ -48,6 +48,7 @@
             this.btnToonData.TabIndex = 0;
             this.btnToonData.Text = "Toon data in Listview";
             this.btnToonData.UseVisualStyleBackColor = true;
+            this.btnToonData.Click += new System.EventHandler(this.btnToonData_Click);
             // 
             // lsvBrouwerijen
             // 
