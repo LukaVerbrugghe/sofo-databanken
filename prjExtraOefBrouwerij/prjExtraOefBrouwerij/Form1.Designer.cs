@@ -65,6 +65,7 @@
             this.lsvBrouwerijen.TabIndex = 1;
             this.lsvBrouwerijen.UseCompatibleStateImageBehavior = false;
             this.lsvBrouwerijen.View = System.Windows.Forms.View.Details;
+            this.lsvBrouwerijen.SelectedIndexChanged += new System.EventHandler(this.lsvBrouwerijen_SelectedIndexChanged);
             // 
             // ID
             // 

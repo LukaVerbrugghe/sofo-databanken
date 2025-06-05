@@ -32,7 +32,8 @@ namespace prjExtraOefBrouwerij.DA
             {
                 brouwerijen.Add(Create(r));
             }
-
+            r.Close();
+            conn.Close();
             return brouwerijen;
         }
 
@@ -60,6 +61,36 @@ namespace prjExtraOefBrouwerij.DA
             {
                 return Color.Green;
             }
+        }
+
+        public static string returnDescriptionNL(int id)
+        {
+            string sql = "SELECT Description_nl FROM brouwerij WHERE id = @ID";
+
+            MySqlConnection conn = Database.MaakVerbinding();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@ID", id.ToString());
+
+            string result = cmd.ExecuteScalar().ToString();
+            conn.Close();
+            return result;
+        }
+
+        public static string returnDescriptionEN(int id)
+        {
+            string sql = "SELECT Description_en FROM brouwerij WHERE id = @ID";
+
+            MySqlConnection conn = Database.MaakVerbinding();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@ID", id.ToString());
+
+            string result = cmd.ExecuteScalar().ToString();
+            conn.Close();
+            return result;
         }
     }
 }

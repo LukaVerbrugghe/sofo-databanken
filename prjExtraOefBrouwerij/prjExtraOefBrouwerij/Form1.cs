@@ -30,5 +30,22 @@ namespace prjExtraOefBrouwerij
                 lsvBrouwerijen.Items.Add(item);
             }
         }
+
+        private void lsvBrouwerijen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Brouwerij BO = new Brouwerij();
+            //ophalen van het gekozen object
+            if (lsvBrouwerijen.SelectedItems.Count == 0)
+                return;
+            ListViewItem item = lsvBrouwerijen.SelectedItems[0];
+
+            BO.id = Convert.ToInt32(item.Text);
+            //in principe niet nodig
+            //BO.Name = item.SubItems[1].Text;
+            //BO.Email = item.SubItems[2].Text;
+            //BO.Website = item.SubItems[3].Text;
+            rtxtBeschrijvingNL.Text = BrouwerijDA.returnDescriptionNL(BO.id);
+            rtxtBeschrijvingEN.Text = BrouwerijDA.returnDescriptionEN(BO.id);
+        }
     }
 }
